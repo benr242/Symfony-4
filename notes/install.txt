@@ -1,1 +1,8 @@
 $ composer create-project symfony/website-skeleton lets-explore-symfony-4
+
+$ git remote add origin https://github.com/benr242/Symfony-4.git
+$ git push origin master
+
+//probably already done
+$ composer require --dev symfony/web-server-bundle
+$ composer require --dev server //alias
