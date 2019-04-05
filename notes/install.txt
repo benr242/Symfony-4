@@ -6,3 +6,6 @@ $ git push origin master
 //probably already done
 $ composer require --dev symfony/web-server-bundle
 $ composer require --dev server //alias
+
+$ php bin/console server:run
+    http://127.0.0.1:8000
