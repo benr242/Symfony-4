@@ -9,3 +9,7 @@ $ composer require --dev server //alias
 
 $ php bin/console server:run
     http://127.0.0.1:8000
+
+$ touch templates/hello_page.html.twig
+
+$ php bin/console make:controller
