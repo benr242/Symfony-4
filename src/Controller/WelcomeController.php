@@ -16,4 +16,12 @@ class WelcomeController extends AbstractController
             'controller_name' => 'WelcomeController',
         ]);
     }
+
+    /**
+     * @Route("hello", name="hello-page")
+     */
+    public function hello()
+    {
+        return $this->render('welcome/hello.html.twig');
+    }
 }
