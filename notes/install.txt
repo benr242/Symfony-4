@@ -13,3 +13,25 @@ $ php bin/console server:run
 $ touch templates/hello_page.html.twig
 
 $ php bin/console make:controller
+
+
+---
+
+$ composer require symfony/orm-pack
+$ composer require --dev symfony/maker-bundle
+
+//createo the database
+# .env
+DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
+$  php bin/console doctrine:database:create
+
+# create entity class
+$ php bin/console make:entity
+
+$ php bin/console doctrine:database:create
+
+$ php bin/console make:entity
+
+$ php bin/console make:migration
+$ php bin/console doctrine:migrations:migrate
+    >>describe <table>

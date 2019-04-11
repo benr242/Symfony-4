@@ -22,7 +22,7 @@ class WelcomeController extends AbstractController
      */
     public function hello()
     {
-        $this->addFlash('success', 'My new hello flosh');
+        $this->addFlash('success', 'My new hello flash');
         return $this->render('welcome/hello.html.twig');
     }
 
