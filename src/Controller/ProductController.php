@@ -16,7 +16,9 @@ class ProductController extends AbstractController
      */
     public function orm()
     {
-        return $this->render('orm/index.html.twig');
+        return $this->render('orm/index.html.twig', [
+            'controller_class' => 'ProductController',
+        ]);
     }
 
     /**
