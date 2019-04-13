@@ -31,6 +31,7 @@
 
             <a class="navbar-brand" href="{{ path('welcome') }}">Home</a>
 
+            {% block nav %}
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -46,6 +47,8 @@
                     </li>
                 </ul>
             </div>
+            {% endblock %}
+
         </div>
     </nav>
 </header>
