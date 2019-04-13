@@ -12,6 +12,14 @@ use App\Entity\Product;
 class ProductController extends AbstractController
 {
     /**
+     * @Route("orm", name="orm")
+     */
+    public function orm()
+    {
+        return $this->render('orm/index.html.twig');
+    }
+
+    /**
      * @Route("/product", name="product")
      */
     public function index()

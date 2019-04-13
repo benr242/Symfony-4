@@ -25,14 +25,4 @@ class WelcomeController extends AbstractController
         $this->addFlash('success', 'My new hello flash');
         return $this->render('welcome/hello.html.twig');
     }
-
-    /**
-     * @Route("orm", name="orm")
-     */
-    public function orm()
-    {
-        return $this->render('orm/index.html.twig');
-    }
-
-
 }
