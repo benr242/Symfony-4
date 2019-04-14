@@ -33,19 +33,7 @@
 
             {% block nav %}
             <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('hello-page') }}">Hello Page</a>
-                    </li>
-                    {#
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('hello-page') }}">ORM</a>
-                    </li>
-                    #}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('orm') }}">ORM</a>
-                    </li>
-                </ul>
+                {{ include('partial/_nav.html.twig') }}
             </div>
             {% endblock %}
 
