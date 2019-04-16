@@ -22,7 +22,7 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/product", name="product")
+     * @Route("/orm/product", name="orm-product")
      */
     public function index()
     {
