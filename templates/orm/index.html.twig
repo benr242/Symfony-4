@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
+
+{% block nav %}
+    <div class="collapse navbar-collapse">
+        {{ include('partial/_hello-nav.html.twig') }}
+    </div>
+{% endblock %}
+
 {% block body %}
     <div>
         <h1>ORM</h1>
