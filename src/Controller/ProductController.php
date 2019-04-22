@@ -43,12 +43,21 @@ class ProductController extends AbstractController
 
         $this->addFlash('success', 'Added new product');
 
-        return $this->redirectToRoute('welcome');
+        return $this->redirectToRoute('orm-show');
 
         return $this->render('product/index.html.twig', [
             'controller_name' => 'ProductController',
         ]);
     }
+
+    /**
+     * @Route("/orm/show", name="orm-show")
+     */
+    public function showDummy()
+    {
+        return $this->render('orm/show.html.twig');
+    }
+
 
     /**
      * @Route("/product/{id}", name="product_show")
