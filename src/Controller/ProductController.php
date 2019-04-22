@@ -44,10 +44,11 @@ class ProductController extends AbstractController
         $this->addFlash('success', 'Added new product');
 
         return $this->redirectToRoute('orm-show');
-
+/*
         return $this->render('product/index.html.twig', [
             'controller_name' => 'ProductController',
         ]);
+*/
     }
 
     /**
@@ -55,7 +56,13 @@ class ProductController extends AbstractController
      */
     public function showDummy()
     {
-        return $this->render('orm/show.html.twig');
+        $products = $this->getDoctrine()
+            ->getRepository(Product::class)
+            ->findAll();
+
+        return $this->render('orm/show.html.twig', [
+            'products' => $products,
+        ]);
     }
 
 
