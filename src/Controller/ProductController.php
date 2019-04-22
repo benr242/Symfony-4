@@ -43,6 +43,8 @@ class ProductController extends AbstractController
 
         $this->addFlash('success', 'Added new product');
 
+        return $this->redirectToRoute('welcome');
+
         return $this->render('product/index.html.twig', [
             'controller_name' => 'ProductController',
         ]);
