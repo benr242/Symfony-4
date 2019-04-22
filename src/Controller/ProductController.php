@@ -41,6 +41,8 @@ class ProductController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
+        $this->addFlash('success', 'Added new product');
+
         return $this->render('product/index.html.twig', [
             'controller_name' => 'ProductController',
         ]);
