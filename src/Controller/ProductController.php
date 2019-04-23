@@ -2,12 +2,14 @@
 
 namespace App\Controller;
 
+use App\Form\ProductType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 
 use App\Entity\Product;
@@ -55,6 +57,19 @@ class ProductController extends AbstractController
             'controller_name' => 'ProductController',
         ]);
 */
+    }
+
+    /**
+     * @Route("/orm/new", name="orm-new")
+     */
+    public function new()
+    {
+        $product = new Product();
+        $form = $this->createForm(ProductType::class, $product);
+
+        return $this->render('product/add.html.twig', [
+           'form' => $form
+        ]);
     }
 
     /**
