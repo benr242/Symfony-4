@@ -5,4 +5,10 @@
 {% block body %}
     test
 
+    <div>
+        {{ form_start(my_form) }}
+        {{ form_widget(my_form) }}
+        <input type="submit" value="add product" />
+        {{ form_end(my_form) }}
+    </div>
 {% endblock body %}
