@@ -3,6 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -16,6 +19,9 @@ class ProductController extends AbstractController
      */
     public function orm()
     {
+        $session = new Session(new NativeSessionStorage(), new AttributeBag());
+        $session->set('nav', 'orm');
+
         return $this->render('orm/index.html.twig', [
             'controller_class' => 'ProductController',
         ]);
