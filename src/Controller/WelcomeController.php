@@ -6,6 +6,10 @@ use App\Service\MessageGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
+
 class WelcomeController extends AbstractController
 {
     /**
@@ -13,6 +17,8 @@ class WelcomeController extends AbstractController
      */
     public function index(MessageGenerator $mg)
     {
+        $session = new Session(new NativeSessionStorage(), new AttributeBag());
+
         $randomMsq = $mg->getHappyMessage();
 
         return $this->render('welcome/index.html.twig', [
