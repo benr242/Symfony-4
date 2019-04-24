@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\ProductType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
@@ -62,10 +63,21 @@ class ProductController extends AbstractController
     /**
      * @Route("/orm/new", name="orm-new")
      */
-    public function new()
+    public function new(Request $request)
     {
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $entityManager->persist($product);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('orm-show');
+        }
 
         return $this->render('product/add.html.twig', [
            'my_form' => $form->createView(),
