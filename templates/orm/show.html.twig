@@ -13,9 +13,20 @@
 
     count: {{ products|length }}
 
-    <ul>
+    <div class="container">
         {% for product in products %}
-            <li>{{ product.name }}:{{ product.price }}:{{ product.description }}</li>
+            <div class="row">
+
+                <div class="col-sm-2">
+                    {{ product.name }}
+                </div>
+                <div class="col-sm-1">
+                    {{ product.price }}
+                </div>
+                <div class="col-sm-9">
+                    {{ product.description }}
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock body %}
