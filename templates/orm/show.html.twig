@@ -12,4 +12,10 @@
     <h1>SHOW</h1>
 
     count: {{ products|length }}
+
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }}:{{ product.price }}:{{ product.description }}</li>
+        {% endfor %}
+    </ul>
 {% endblock body %}
