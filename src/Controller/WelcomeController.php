@@ -22,6 +22,7 @@ class WelcomeController extends AbstractController
         $randomMsq = $mg->getHappyMessage();
 
         return $this->render('welcome/index.html.twig', [
+            'test' => 'test',
             'happyMessage' => $randomMsq,
             'controller_name' => 'WelcomeController',
         ]);
