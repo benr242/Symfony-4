@@ -1,7 +1,14 @@
-.main {
-    margin-top: 20px;
+main {
+    background-color: 8959A8;
+    outline: #8959A8;
+    outline-color: #222222;
+    outline-width: medium;
 }
 
 .row:nth-of-type(odd) {
     background-color: #5eb5e0;
+}
+
+.row:nth-of-type(even) {
+    background-color: #ffffff;
 }
