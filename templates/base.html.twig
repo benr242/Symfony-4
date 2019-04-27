@@ -31,13 +31,14 @@
 
             <a class="navbar-brand" href="{{ path('welcome') }}">Home</a>
 
-            {% block nav %}
             <div class="collapse navbar-collapse">
+                {% block nav %}
                 {% include 'partial/_home-nav.html.twig' %}
                 {#{{ include('partial/_home-nav.html.twig') }}#}
                 {#{{ include('partial/_{{ nav|default('home') }}'-nav.html.twig') }}#}
+                {% endblock %}
+
             </div>
-            {% endblock %}
         </div>
     </nav>
 </header>
