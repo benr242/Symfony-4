@@ -25,6 +25,8 @@ class ProductController extends AbstractController
         $session = new Session(new NativeSessionStorage(), new AttributeBag());
         $session->set('nav', 'orm');
 
+        //$this->addFlash('success', {{ nav-base}});
+
         return $this->render('orm/index.html.twig', [
             'controller_class' => 'ProductController',
         ]);
@@ -50,7 +52,7 @@ class ProductController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        $this->addFlash('success', 'Added new product');
+        $this->addFlash('success', $nav-base);
 
         return $this->redirectToRoute('orm-show');
 /*

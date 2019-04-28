@@ -34,6 +34,10 @@ class WelcomeController extends AbstractController
     public function hello()
     {
         $this->addFlash('success', 'My new hello flash');
-        return $this->render('welcome/hello.html.twig');
+        //$this->addFlash('succes', )
+        //$this->addFlash('success', $navbase);
+        return $this->render('welcome/hello.html.twig', [
+            'menu' => '_orm_'
+        ]);
     }
 }
