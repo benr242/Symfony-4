@@ -42,3 +42,7 @@ $ php bin/console make:controller
 --
 $php bin/console make:form
     Contactt[Type]  --> (src/Form
+
+---
+$ composer require knplabs/knp-menu-bundle "^2.0"
+//$ composer require rollerworks/navigation-bundle
