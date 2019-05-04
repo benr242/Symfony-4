@@ -52,7 +52,7 @@ class ProductController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        //$this->addFlash('success', $navbase);
+        // $this->addFlash('success', $navbase);
 
         return $this->redirectToRoute('orm-show');
 /*
