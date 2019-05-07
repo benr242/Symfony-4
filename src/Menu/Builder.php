@@ -19,12 +19,15 @@ class Builder implements ContainerAwareInterface
 
     public function mainMenu(FactoryInterface $factory, array $options)
     {
-        $menu = $factory->createItem('root');
+        $menu = $factory->createItem('My Menu');
 
         $menu->addChild('Home', ['route' => 'welcome']);
 
         // access services from the container!
         $em = $this->container->get('doctrine')->getManager();
+        // findMostRecent and Blog are just imaginary examples
+        $blog = $em->getRepository('AppBundle:Blog')->findMostRecent();
+
 
         $menu->addChild('Latest Blog Post', [
             'route' => 'blog_show',
