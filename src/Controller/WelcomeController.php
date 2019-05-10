@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Menu\Builder;
 use App\Service\MessageGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,11 +16,13 @@ class WelcomeController extends AbstractController
     /**
      * @Route("/", name="welcome")
      */
-    public function index(MessageGenerator $mg)
+    public function index(MessageGenerator $mg, Builder $builder)
     {
         $session = new Session(new NativeSessionStorage(), new AttributeBag());
 
         $randomMsq = $mg->getHappyMessage();
+
+        $menu = $builder->mainMenu();
 
         return $this->render('welcome/index.html.twig', [
             'test' => 'test',
