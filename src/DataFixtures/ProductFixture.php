@@ -10,11 +10,14 @@ class ProductFixture extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $product = new Product();
-        $product->setName('Priceless widget!');
-        $product->setPrice(14.50);
-        $product->setDescription('Ok, I guess it *does* have a price');
-        $manager->persist($product);
+        for ($i=0;$i < 20;$i++)
+        {
+            $product = new Product();
+            $product->setName('Priceless widget:'.$i);
+            $product->setPrice(mt_rand(10, 100));
+            $product->setDescription('Ok, I guess it *does* have a price');
+            $manager->persist($product);
+        }
 
         $manager->flush();
     }
