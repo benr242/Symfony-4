@@ -16,6 +16,7 @@ class ProductFixture extends Fixture
             $product->setName('Priceless widget:'.$i);
             $product->setPrice(mt_rand(10, 100));
             $product->setDescription('Ok, I guess it *does* have a price');
+
             $manager->persist($product);
         }
 
