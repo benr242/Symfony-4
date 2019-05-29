@@ -10,8 +10,10 @@ class BaseProductFixtures extends BaseFixture
 {
     public function loadData(ObjectManager $manager)
     {
-        $this->createMany(Product::class,   2, function (Product $product, $count){
-            $product->setName('Priceless widget:'.$count);
+        $myname = "ben";
+
+        $this->createMany(Product::class,       5, function (Product $product, $count) use ($manager, $myname){
+            $product->setName('Priceless widget:'.$count.$myname);
             $product->setPrice(mt_rand(10, 100));
             $product->setDescription('Ok, Many');
         });

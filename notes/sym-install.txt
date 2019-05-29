@@ -1,0 +1,64 @@
+Dependancies
+
+//from git clone, to get vendor librarios
+$ composer update
+
+//if error with '$composer update' after clone
+$composer require symfony/translation
+
+$ composer create-project symfony/website-skeleton lets-explore-symfony-4
+
+$ git remote add origin https://github.com/benr242/Symfony-4.git
+$ git push origin master
+
+//probably already done
+$ composer require --dev symfony/web-server-bundle
+$ composer require --dev server //alias
+
+
+$ php bin/console server:run
+    http://127.0.0.1:8000
+
+$ touch templates/hello_page.html.twig
+
+$ php bin/console make:controller
+
+
+---
+
+$ composer require symfony/orm-pack
+$ composer require --dev symfony/maker-bundle
+
+//createo the database
+# .env
+DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
+$  php bin/console doctrine:database:create
+
+# create entity class
+$ php bin/console make:entity //Product
+
+$ php bin/console doctrine:database:create
+
+$ php bin/console make:entity
+
+$ php bin/console make:migration
+$ php bin/console doctrine:migrations:migrate
+    >>describe <table>
+$ php bin/console doctrine:query:sql "SELECT * FROM article"
+
+
+$ php bin/console make:controller
+    Test[Controlsller]
+
+--
+$php bin/console make:form
+    Contactt[Type]  --> (src/Form
+
+---
+$ composer require knplabs/knp-menu-bundle "^2.0"
+//$ composer require rollerworks/navigation-bundle
+
+
+$ composer require --dev orm-fixtures
+$ php bin/console make:fixtures
+
