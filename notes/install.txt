@@ -16,8 +16,6 @@ $ touch templates/hello_page.html.twig
 $ php bin/console make:controller
 
 
----
-
 $ composer require symfony/orm-pack
 $ composer require --dev symfony/maker-bundle
 
